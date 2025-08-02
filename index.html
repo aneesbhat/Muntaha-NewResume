@@ -18,12 +18,13 @@
       scroll-behavior: smooth;
      }
 
-        #head {
-            position: sticky;
+        /* header {
+            position:sticky;
             top:0;
-            z-index:1000;
+            left:0;
+            z-index:9;
             background-color: #111818;
-        }
+        } */
 
         #nav a {
             position: relative;
@@ -146,7 +147,7 @@
       style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'
     >
       <div class="layout-container flex h-full grow flex-col">
-        <header id="head" class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#293838] px-10 py-3">
+        <header class="sticky top-0 bg-[#111818] z-50 shadow-md flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#293838] px-10 py-3">
           <div class="flex items-center gap-4 text-white">
             <div class="size-4">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -178,12 +179,13 @@
               <a class="text-white text-sm font-medium leading-normal" href="#education">Education</a>
               <a class="text-white text-sm font-medium leading-normal" href="#contact">Contact</a>
             </div>
-            <button
-              onclick="downloadPDF()" id="btn-pdf" class="flex min-w-[84px] sm:max-w-[300px] lg:max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#019863]
+           <a href="files/Muntaha Resume.pdf" download=""> <button
+               id="btn-pdf" class="flex min-w-[84px] sm:max-w-[300px] lg:max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#019863]
               text-[#111818] text-sm font-bold leading-normal tracking-[0.015em]"
             >
               <span class="truncate">Download PDF</span>
             </button>
+            </a>
           </div>
         </header>
         <div id="home" class="px-40 flex flex-1 justify-center py-5">
@@ -210,15 +212,15 @@
             <div class="p-4 grid grid-cols-[20%_1fr] gap-x-6">
               <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#3c5353] py-5">
                 <p class="text-[#9db8b8] text-sm font-normal leading-normal">Phone</p>
-                <p class="text-white text-sm font-normal leading-normal">+1-555-987-6543</p>
+                <p class="text-white text-sm font-normal leading-normal">+91-8492935928</p>
               </div>
               <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#3c5353] py-5">
                 <p class="text-[#9db8b8] text-sm font-normal leading-normal">Email</p>
-                <p class="text-white text-sm font-normal leading-normal">muntaha.dar@email.com</p>
+                <p class="text-white text-sm font-normal leading-normal">xayembhat@gmail.com</p>
               </div>
               <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#3c5353] py-5">
                 <p class="text-[#9db8b8] text-sm font-normal leading-normal">Location</p>
-                <p class="text-white text-sm font-normal leading-normal">New York, NY</p>
+                <p class="text-white text-sm font-normal leading-normal">AiwaKadal, Soura, Srinagar, Jammu & Kashmir</p>
               </div>
             </div>
             <h2 id="about" class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Core Skills</h2>
@@ -241,9 +243,12 @@
             </div>
             <h2 id="skills" class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">About Me</h2>
             <p class="text-white text-base font-normal leading-normal pb-3 pt-1 px-4">
-              A highly motivated and results-oriented Sales Officer with over 5 years of experience in driving sales growth and building lasting client relationships. Proven
-              ability to understand client needs, develop tailored solutions, and consistently exceed sales targets. Passionate about leveraging market insights and innovative
-              strategies to achieve business objectives.
+            My name is <b>Muntaha Nazir Dar</b>, a highly motivated and results-driven Sales Officer with extensive experience working across multiple companies in both B2B and B2C environments. Over the years, I have developed a strong passion for understanding market trends, customer behavior, and competitive positioning to help drive consistent revenue growth. My journey in the sales industry has allowed me to work with diverse teams and clients, giving me valuable exposure to various sectors including retail, travel, and services. <br/> <br/> 
+
+          I pride myself on being a strategic thinker with strong interpersonal and communication skills, capable of identifying client needs and offering effective, customized solutions. I have a proven record of exceeding sales targets, closing high-value deals, and contributing to company profitability through innovative sales strategies and persistent follow-ups. My adaptability and willingness to learn have helped me stay relevant in the fast-paced and evolving sales landscape.
+          <br/> <br/>
+
+          Beyond numbers, I am a strong believer in relationship-based selling, where trust, reliability, and consistent service build long-term client loyalty. I thrive in performance-driven environments, and I’m always keen on taking new challenges that push my limits and expand my professional capabilities. I am now seeking opportunities where I can further apply my expertise, contribute to organizational goals, and grow as a valuable part of a forward-thinking team.
             </p>
             <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Skills</h2>
             <div class="pb-3">
@@ -428,12 +433,9 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- html2pdf.js CDN -->
-<!-- Include html2pdf.js library -->
-<!-- Add this in your HTML just before </body> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    
 
-<script>
+<!-- <script>
   function downloadPDF() {
     // Select the full page content or a specific container
     const element = document.querySelector('body'); // Or use a wrapper like #resume
@@ -471,5 +473,5 @@
       document.querySelectorAll('.fixed, .sticky, #btn-pdf, #cont').forEach(el => el.style.display = '');
     });
   }
-</script>
+</script> -->
 </html>
